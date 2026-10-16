@@ -5,6 +5,11 @@ document.body.insertAdjacentHTML("afterbegin", "<div id=\"choices\">\n<button cl
 const COLORS = ['#E8B923', '#D8452F', '#E48AA3', '#27407A'];
 const NUM = ['选项一', '选项二', '选项三', '选项四'];
 const list = document.getElementById('list');
+// 只在最新一楼显示：酒馆不重算旧楼正则深度、隐藏楼不受深度限制，故自己收起整个 iframe，楼层增删时重判
+const floor = getCurrentMessageId();
+const only = () => { frameElement.style.display = floor === getLastMessageId() ? '' : 'none'; };
+only();
+[tavern_events.CHARACTER_MESSAGE_RENDERED, tavern_events.USER_MESSAGE_RENDERED, tavern_events.MESSAGE_DELETED].forEach((e) => eventOn(e, only));
 document.querySelectorAll('choice').forEach((x, i) => {
   const b = list.appendChild(document.createElement('button'));
   b.className = 'opt';
