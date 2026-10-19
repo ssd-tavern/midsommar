@@ -24,7 +24,7 @@ All contents of this repository (code, styles, UI structure, interaction design,
 ## 内容说明
 
 - `dist/midsommar-style.js`：楼内全局样式脚本，由角色卡内嵌的 loader 动态加载
-- `dist/midsommar-footer.js`：楼尾功能栏（日程、地图、女主立绘），由角色卡内的正则外壳动态加载
+- `dist/midsommar-footer.js`：楼尾功能栏（日程、地图、她们的故事），由角色卡内的正则外壳动态加载
 - `dist/midsommar-choices.js`：行动选项条（每轮四个选项，点选填入输入框），由角色卡内的正则外壳动态加载
 - `assets/*.webp`：场景图、地图、每日民俗图、大事件图、女主立绘
 - 全部走 `main` 分支，不打 tag

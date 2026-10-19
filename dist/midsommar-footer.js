@@ -89,7 +89,7 @@ box.addEventListener('click', (e) => {
   info.innerHTML = '<div class="pic" style="background-image:url(' + img + ')"></div><div class="txt"><b>' + open.dataset.loc + '</b>' + text + '</div>';
 });
 
-// ==== 女主立绘：左大图，右边名字、介绍与缩略图，点缩略图换大图 ====
+// ==== 她们的故事：左大图，右边名字、介绍与缩略图，点缩略图换大图 ====
 const gp = el('girls');
 let gi = 0;
 function girl(i) {
