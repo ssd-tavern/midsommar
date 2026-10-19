@@ -28,7 +28,7 @@ const GIRLS = [
     qa: ['毛肚火锅，辣到同桌流泪她还要再加一勺', '麻将，宿舍里没输过', '榴莲，隔着一条街闻到就要换方向', '食堂用刚学的方言点餐，阿姨愣了三秒，递来一碗不知道什么汤'],
     pics: [
       ['外面', 'https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/portrait-li-ni-ya-wai-mian.webp'],
-      ['入村', 'https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/portrait-li-ni-ya-ru-cun.webp'],
+      ['入村', 'https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/portrait-li-ni-ya-ru-cun-v2.webp'],
       ['私下', 'https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/portrait-li-ni-ya-si-xia.webp']] },
   { name: '布丽塔', color: '#E48AA3', intro: '18 岁，哈尔加的姑娘，是莉妮娅从小带大的妹妹。直率热情，喜欢谁就让谁知道，对外面的世界有问不完的问题；你是她头一回这么近见到的外来男孩。',
     qa: ['草莓蘸盐，没人懂，她吃得很香', '两指口哨，隔着一片草坪能把羊吹回来', '村口那只大鹅，三年没打赢过', '穿着莉妮娅带回来的运动鞋，左右脚穿反了走一整天'],
@@ -39,9 +39,9 @@ const GIRLS = [
   { name: '艾拉', color: '#8A6CB4', intro: '27 岁，哈尔加的药草师，在外面生活过几年，英语流利，这个夏天回村过节。沉静温柔，说话轻，村里的茶和外来者的饮食起居都由她照料，总在恰好的时候出现。',
     qa: ['深夜泡面加两个蛋，在城里学的坏习惯', '打鼓，在斯德哥尔摩的地下室乐队待过一年', '蛾子，明明天天和草药打交道', '第一次骑共享单车，骑进了喷泉'],
     pics: [
-      ['外面', 'https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/portrait-ai-la-wai-mian.webp'],
-      ['回村', 'https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/portrait-ai-la-hui-cun.webp'],
-      ['私下', 'https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/portrait-ai-la-si-xia.webp']] },
+      ['外面', 'https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/portrait-ai-la-wai-mian-v2.webp'],
+      ['回村', 'https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/portrait-ai-la-hui-cun-v2.webp'],
+      ['私下', 'https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/portrait-ai-la-si-xia-v2.webp']] },
   { name: '祝凛', color: '#3F6FB5', intro: '22 岁，人类学大四，毕业论文写的就是瑞典的仲夏节。大小姐出身，黑色长直发，身形高挑，言谈有分寸，一聊到民俗就两眼放光。查资料、记日程、和长辈打交道多由她出面，在队伍里是最靠谱的一个。',
     qa: ['话梅，论文卡住时一天一包', '模仿各地口音，导师的口头禅学得最像', '听自己的录音，每次都要捂耳朵', '对一位路过的村民鞠躬行礼，人家只是弯腰系鞋带'],
     pics: [
