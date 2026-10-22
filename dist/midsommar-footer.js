@@ -53,11 +53,11 @@ const MAPINFO = {"五月柱草坪": ["https://testingcf.jsdelivr.net/gh/ssd-tave
 const FOLK = [["蘑菇茶", "进村前一夜，归来的年轻人在村外草地泡蘑菇茶请客人喝，喝下去草叶像在呼吸，颜色也浓起来。头一次喝的人身边总有人陪着，等他缓过来。", "https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/folk-mushroom-tea.webp"], ["白衣与符文", "村里人穿自己种、自己织的白色亚麻，领口袖口绣着各人的符文，没有两件一样。外来者入村当夜也领到一件白衣和一个符文，换上以后站在人群里就分不出谁是外来的。", "https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/folk-white-linen.webp"], ["命名礼", "村里人去世以后，名字不会跟着走，而是留给一个还没出生的孩子。命名礼上长者当众念出这个名字，全村齐声应和，孩子还没落地就有了来处。", "https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/folk-naming.webp"], ["花冠", "姑娘们在草地上采金凤花、三叶草、风铃草编成花冠，送给中意的年轻男子。收到的人当场戴上，就是领了这份心意。", "https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/folk-flower-crown.webp"], ["五月柱", "人们把缠满叶子和野花的五月柱立在草坪中央，十字横杆下挂着两个花环。全村手拉手绕着它环舞，再蹲下来学青蛙跳。", "https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/folk-maypole.webp"], ["成年礼", "十八岁的人换上新缝的白衣，领口空着一块，长者把新符文刻在木牌上交给他们，妇人当场绣上。孩子们唱着歌把他们送出春季，从此算作夏季之人。", "https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/folk-coming-of-age.webp"], ["共感", "一个人哭，身边的人跟着哭；一个人唱，全村跟着唱，高低长短都随着那个人走。围着篝火时全村站成几圈，唱一首没有词的调子。", "https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/folk-bonfire.webp"], ["仲夏宴席", "桌上摆着腌鲱鱼、撒莳萝的新土豆、酸奶油拌香葱和草莓蛋糕，酒是自家酿的啤酒和烈酒。每喝一口烈酒前，全桌先唱一段饮酒歌。", "https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/folk-feast.webp"], ["圣书", "圣书用哈尔加独有的十六个符文写成，每个符文对应一种情感，从最神圣排到最不神圣。几百册一册接一册，每册后面都留着空白页，因为它永远写不完。", "https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/folk-sacred-book.webp"], ["五月女王的花裙", "五月女王加冕时换上一条长裙，无数朵鲜花缀在上面，花叶层层叠叠垂到脚边。村里人说，这是把一整片草地穿在了身上。", "https://testingcf.jsdelivr.net/gh/ssd-tavern/midsommar@main/assets/folk-flower-gown.webp"]];
 const el = (id) => document.getElementById(id);
 
-// 只在最新一楼显示：酒馆不重算旧楼正则深度、隐藏楼不受深度限制，故自己收起整个 iframe，楼层增删时重判
+// 只在最新一个 AI 楼显示：酒馆不重算旧楼正则深度、隐藏楼不受深度限制，故自己收起整个 iframe；用户发言后仍留着，等新的 AI 楼渲染完才收起，删楼时重判
 const floor = getCurrentMessageId();
-const only = () => { frameElement.style.display = floor === getLastMessageId() ? '' : 'none'; };
+const only = () => { frameElement.style.display = floor === getLastMessageId() || !getChatMessages(`${floor + 1}-${getLastMessageId()}`, { role: 'assistant' }).length ? '' : 'none'; };
 only();
-[tavern_events.CHARACTER_MESSAGE_RENDERED, tavern_events.USER_MESSAGE_RENDERED, tavern_events.MESSAGE_DELETED].forEach((e) => eventOn(e, only));
+[tavern_events.CHARACTER_MESSAGE_RENDERED, tavern_events.MESSAGE_DELETED].forEach((e) => eventOn(e, only));
 
 await waitGlobalInitialized('Mvu');
 const sd = Mvu.getMvuData({ type: 'message', message_id: 'latest' }).stat_data;
